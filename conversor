@@ -1,0 +1,580 @@
+#include <stdio.h>
+#include <conio.h>
+#define false 0
+#define true 1
+#include <locale.h>
+#include <stdlib.h>
+void menuPrincipal(){
+	
+printf("\n\n\n\n\t\t\t\tCONVERSOR\n\n\n\n\n");
+
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|    1-Convertor de Moedas                  	 |\n");
+	printf("\t\t|    2-Converter de Celsius para Fahrenheit 	 |\n");	
+	printf("\t\t|    3-Converter de litros para galoes      	 |\n");	
+	printf("\t\t|    4-Converter metros em milhas           	 |\n");	
+	printf("\t\t|    5-Converter metros em pes              	 |\n");
+	printf("\t\t|    6-Converter quilos em arrobas          	 |\n");
+	printf("\t\t|    7-Converter quilos em alqueires        	 |\n");
+	printf("\t\t|    8-Converter quilos em libras            	 |\n");
+	printf("\t\t|    9-Converte	quadrados em hectares            |\n");
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");	
+			
+}
+
+
+float quilosParaalqueires(float quilos) {
+    return quilos / 24000.0;
+}
+float alquieresParaquilos(float alqueires) {
+    return alqueires * 24000.0;
+}
+void menuquilosalqueires (){
+	printf("\t\t___________________________________________________\n");
+	printf("\t\t|          		 Escolha a opoção                 |\n");
+	printf("\t\t|                                             	  |\n");
+	printf("\t\t|    1-Quilos para alqueires   	     			  |\n");
+	printf("\t\t|    2-Alqueires para quilos                      |\n");
+	printf("\t\t|    0-Sair                                       |\n");
+	printf("\t\t|_________________________________________________|\n");
+	
+}
+float quilosParaarrobas(double quilos) {
+    return quilos / 15.0;
+}
+float arrobasParaquilos(double arrobas) {
+    return arrobas * 15.0;
+}
+
+void menumetrospes(){
+	
+	printf("\t\t___________________________________________________\n");
+	printf("\t\t|          		 escolha a opoção                 |\n");
+	printf("\t\t|                                             	  |\n");
+	printf("\t\t|    1-Metros para pes	     				      |\n");
+	printf("\t\t|    2-Pes para metros                            |\n");
+	printf("\t\t|    0-Sair                                       |\n");
+	printf("\t\t|_________________________________________________|\n");
+	
+}
+void menuquilosarrobas(){
+	
+	printf("\t\t___________________________________________________\n");
+	printf("\t\t|          		 escolha a opoção                 |\n");
+	printf("\t\t|                                             	  |\n");
+	printf("\t\t|    1-Quilos para arrobas	                      |\n");
+	printf("\t\t|    2-Arrobas para quilos                        |\n");
+	printf("\t\t|    0-Sair                                       |\n");
+	printf("\t\t|_________________________________________________|\n");
+	
+}
+void menuquilosAlqueires(){
+	printf("\t\t___________________________________________________\n");
+	printf("\t\t|          		 escolha a opoção                 |\n");
+	printf("\t\t|                                             	  |\n");
+	printf("\t\t|    1-Quilos para alquieres	                  |\n");
+	printf("\t\t|    2-Alqueires em quilos                        |\n");
+	printf("\t\t|    0-Sair                                       |\n");
+	printf("\t\t|_________________________________________________|\n");
+	
+	
+}
+void menuquiloslibras(){
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|    1-Quilos para libras     					 |\n");
+	printf("\t\t|    2-libras  para quilos                       |\n");
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");
+}
+void menumetrosquadradoshectares(){
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|    1-Metros quadrados para hectares            |\n");
+	printf("\t\t|    2-Hectares  para metros quadrados           |\n");
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");
+}
+float metros4Parahectares(float metros4){
+	return metros4 * 0.0001;
+}
+float hectaresParametros4(float hectares){
+	return hectares * 1000;
+}
+float quilosParalibras(float quilos){
+	return  quilos * 2.20462;
+}
+float librasParaquilos(float libras){
+	return libras / 2.20462;
+}
+float  quiloPara_arrobas (float quilos){
+	return quilos * 15.0;
+	
+}
+float  arrobaParaquilos (float arroba){
+	return arroba / 15.0;
+	
+}
+float metrosParapes(float metros){
+	return metros * 3.28084;
+	
+}
+float pesParametros(float pes){
+	return pes / 3.28084;
+	
+}
+float litros_para_galoes(float litros) {
+    return litros * 0.264172;
+}
+float galoes_para_litros(float galoes) {
+    return galoes / 0.264172;
+}
+void celsiusFahrenheit(){
+	
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|    1-Celsius para fahrenheit					 |\n");
+	printf("\t\t|    2-Fahrenheit para celcius                   |\n");
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");
+	
+}
+float celsius_para_fahrenheit(float celsius) {
+    return (celsius * 1.8) + 32;
+}
+float fahrenheit_para_Celsius(float fahrenheit) {
+    return (fahrenheit - 32) / 1.8;
+}
+void menuMoedas(){
+	
+	
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|     Escolha o tipo de moeda que quer converter |\n");
+	printf("\t\t|    1-Dolares americanos						 |\n");
+	printf("\t\t|    2-Euros 	 								 |\n");	
+	printf("\t\t|    3-Reais								 	 |\n");
+	printf("\t\t|    4-Libras inglesas    					  	 |\n");	
+	printf("\t\t|    5-Iens           							 |\n");	
+	printf("\t\t|    6-Kwanzas              					 |\n");
+	printf("\t\t|    7-Rublos                 					 |\n");	
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");	
+	
+	
+}
+void menumetrosmilhas(){
+	
+	printf("\t\t___________________________________________________\n");
+	printf("\t\t|          		 escolha a opoção                 |\n");
+	printf("\t\t|                                             	  |\n");
+	printf("\t\t|    1-Metros para milhas					      |\n");
+	printf("\t\t|    2-Milhas para metros                         |\n");
+	printf("\t\t|    0-Sair                                       |\n");
+	printf("\t\t|_________________________________________________|\n");
+	
+}
+float metrosParaMilhas(float metros) { 
+    return metros / 1609.34;
+}
+float milhasParaMetros(float milhas) {
+    return milhas * 1609.34;
+}
+void menuLitrosGaloes(){
+	
+	
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|    1-litros para galoes					     |\n");
+	printf("\t\t|    2-galoes para litros                        |\n");
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");
+	
+}
+void menuEuros(){
+	
+	
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|     Escolha o tipo de moeda que quer converter |\n");
+	printf("\t\t|    1-Dolares americanos						 |\n");
+	printf("\t\t|    3-Reais								 	 |\n");
+	printf("\t\t|    4-Libras inglesas    					  	 |\n");	
+	printf("\t\t|    5-Iens           							 |\n");	
+	printf("\t\t|    6-Kwanzas              					 |\n");
+	printf("\t\t|    7-Rublos                 					 |\n");	
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");	
+	
+	
+}
+void menuDolar(){
+	
+	
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|     Escolha o tipo de moeda que quer converter |\n");
+	printf("\t\t|    2-Euros 	 								 |\n");	
+	printf("\t\t|    3-Reais								 	 |\n");
+	printf("\t\t|    4-Libras inglesas    					  	 |\n");	
+	printf("\t\t|    5-Iens           							 |\n");	
+	printf("\t\t|    6-Kwanzas              					 |\n");
+	printf("\t\t|    7-Rublos                 					 |\n");	
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");	
+	
+	
+}
+void menuReais(){
+	
+	
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|     Escolha o tipo de moeda que quer converter |\n");
+	printf("\t\t|    1-Dolares americanos						 |\n");
+	printf("\t\t|    2-Euros 	 								 |\n");	
+	printf("\t\t|    4-Libras inglesas    					  	 |\n");	
+	printf("\t\t|    5-Iens           							 |\n");	
+	printf("\t\t|    6-Kwanzas              					 |\n");
+	printf("\t\t|    7-Rublos                 					 |\n");	
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");	
+	
+	
+}
+void menuLibras(){
+	
+	
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|     Escolha o tipo de moeda que quer converter |\n");
+	printf("\t\t|    1-Dolares americanos						 |\n");
+	printf("\t\t|    2-Euros 	 								 |\n");	
+	printf("\t\t|    3-Reais								 	 |\n");
+	printf("\t\t|    5-Iens           							 |\n");	
+	printf("\t\t|    6-Kwanzas              					 |\n");
+	printf("\t\t|    7-Rublos                 					 |\n");	
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");	
+	
+	
+}void menuIens(){
+	
+	
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|     Escolha o tipo de moeda que quer converter |\n");
+	printf("\t\t|    1-Dolares americanos						 |\n");
+	printf("\t\t|    2-Euros 	 								 |\n");	
+	printf("\t\t|    3-Reais								 	 |\n");
+	printf("\t\t|    4-Libras inglesas    					  	 |\n");		
+	printf("\t\t|    6-Kwanzas              					 |\n");
+	printf("\t\t|    7-Rublos                 					 |\n");	
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");	
+	
+	
+}
+void menuKwanzas(){
+	
+	
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|     Escolha o tipo de moeda que quer converter |\n");
+	printf("\t\t|    1-Dolares americanos						 |\n");
+	printf("\t\t|    2-Euros 	 								 |\n");	
+	printf("\t\t|    3-Reais								 	 |\n");
+	printf("\t\t|    4-Libras inglesas    					  	 |\n");	
+	printf("\t\t|    5-Iens           							 |\n");	
+	printf("\t\t|    7-Rublos                 					 |\n");	
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");	
+	
+	
+}
+void menuRublos(){
+	
+	
+	printf("\t\t__________________________________________________\n");
+	printf("\t\t|                                           	 |\n");
+	printf("\t\t|     Escolha o tipo de moeda que quer converter |\n");
+	printf("\t\t|    1-Dolares americanos						 |\n");
+	printf("\t\t|    2-Euros 	 								 |\n");	
+	printf("\t\t|    3-Reais								 	 |\n");
+	printf("\t\t|    4-Libras inglesas    					  	 |\n");	
+	printf("\t\t|    5-Iens           							 |\n");	
+	printf("\t\t|    6-Kwanzas              					 |\n");	
+	printf("\t\t|    0-Sair                                      |\n");
+	printf("\t\t|________________________________________________|\n");	
+	
+	
+}
+int convertordegraus(){
+	
+}
+int conversordemoedas(){
+	
+}
+void menuhectares(){
+	printf("\t\t___________________________________________________\n");
+	printf("\t\t|                Escolha a opoção                 |\n");
+	printf("\t\t|                                                 |\n");
+	printf("\t\t|    1-hectares para metros   	     	          |\n");
+	printf("\t\t|    2-metros para hectares                       |\n");
+	printf("\t\t|    0-Sair                                       |\n");
+	printf("\t\t|_________________________________________________|\n");
+	
+}
+double metrosQuadradosParaHectares(double metrosQuadrados) {
+    return metrosQuadrados / 10000;
+}
+double hectaresParaMetrosQuadrados(double hectares) {
+    return hectares * 10000;
+}
+int main(){
+	
+	setlocale(LC_ALL,"portuguese");
+	
+	float volume;
+	float volume1;
+	
+	int fechar = false;
+	menuPrincipal();
+			
+	char op;
+	int opvolume1;
+	int opvolume;
+	op = getch();
+	
+
+	do{
+	
+	
+	switch(op){
+			case '1':
+				system("CLS");
+				menuMoedas();
+				
+		break;
+			case '2':
+				
+				system("CLS");
+				celsiusFahrenheit();
+				
+				printf("Escolha a opção:\n");
+                printf("1. Celsius para Fahrenheit \n");
+                printf("2.  Fahrenheit para Celsius \n");
+                do {
+                	scanf("%d",&opvolume1);
+	                if(opvolume1<1 || opvolume1>2){
+				       	printf("ERRO\n");
+				    }
+				}while(opvolume1<1 || opvolume1>2);
+                
+			printf("Escolha a quantidade \n");
+			scanf("%f", &volume1);	
+			       
+				   
+			if(opvolume ==1){
+				printf("%.2f",celsius_para_fahrenheit(volume1));
+			} else if(opvolume ==2) {
+				printf("%.2f",fahrenheit_para_Celsius(volume1));
+			}
+
+			
+		break;
+			case '3':
+				system("CLS");
+				menuLitrosGaloes();
+				printf("Escolha a opção:\n");
+                printf("1. Litros para Galões\n");
+                printf("2. Galões para Litros\n");
+              do {
+                	scanf("%d",&opvolume1);
+	                if(opvolume1<1 || opvolume1>2){
+				       	printf("ERRO\n");
+				    }
+				}while(opvolume1<1 || opvolume1>2);
+                
+			printf("escolha o  volume\n");
+			scanf("%f", &volume);	
+			       
+			if(opvolume ==1){
+				printf("%.2f",litros_para_galoes(volume) );
+			} else {
+				printf("%.2f", galoes_para_litros(volume) );
+			}
+			
+		break;
+			case '4':
+				
+			
+	     	system("CLS");
+			
+			menumetrosmilhas();
+				printf("Escolha a opção:\n");
+                printf("1. Metros para milhas\n");
+                printf("2. Milhas para metros\n");
+            do {
+                	scanf("%d",&opvolume1);
+	                if(opvolume1<1 || opvolume1>2){
+				       	printf("ERRO\n");
+				    }
+				}while(opvolume1<1 || opvolume1>2);
+                
+			printf("escolha o  volume\n");
+			scanf("%f", &volume);	
+			       
+			if(opvolume ==1){
+				printf("%.2f", metrosParaMilhas(volume));
+			} else {
+				printf("%.2f", milhasParaMetros(volume));
+			}
+				
+				
+		break;
+			case '5':
+				system("CLS");
+			   menumetrospes();
+			   
+			   volume = 0;
+			   opvolume = 0;
+			   
+			   printf("Escolha a opção:\n");
+               printf("1. Metros para pes\n");
+               printf("2. Pes para metros\n");
+               do {
+                	scanf("%d",&opvolume1);
+	                if(opvolume1<1 || opvolume1>2){
+				       	printf("ERRO\n");
+				    }
+				}while(opvolume1<1 || opvolume1>2);
+                
+			printf("escolha o  volume\n");
+			scanf("%f", &volume);	
+			       
+			if(opvolume ==1){
+				printf("%.2f", metrosParapes(volume));
+			} else {
+				printf("%.2f", pesParametros(volume));
+			}
+		break;
+			case '6':
+				
+				system("CLS");
+			    menuquilosarrobas();
+			   volume = 0;
+			   opvolume = 0;
+			   
+			   printf("Escolha a opção:\n");
+               printf("1. Quilos para arrobas\n");
+               printf("2. Arrobas em quilos\n");
+               do {
+                	scanf("%d",&opvolume1);
+	                if(opvolume1<1 || opvolume1>2){
+				       	printf("ERRO\n");
+				    }
+				}while(opvolume1<1 || opvolume1>2);
+                
+			printf("escolha o  volume\n");
+			scanf("%f", &volume);	
+			       
+			if(opvolume ==1){
+				printf("%.2f", quilosParaarrobas(volume));
+			} else {
+				printf("%.2f",	arrobasParaquilos (volume));
+			}
+			    
+		break;
+			case '7':
+				system("CLS");	
+				menuquilosalqueires();
+			   volume = 0;
+			   opvolume = 0;
+			   
+			   printf("Escolha a opção:\n");
+               printf("1. Quilos para alqueires\n");
+               printf("2. Alqueires em quilos\n");
+               do {
+                	scanf("%d",&opvolume1);
+	                if(opvolume1<1 || opvolume1>2){
+				       	printf("ERRO\n");
+				    }
+				}while(opvolume1<1 || opvolume1>2);
+                
+			printf("escolha o  volume\n");
+			scanf("%f", &volume);	
+			       
+			if(opvolume ==1){
+				printf("%.2f", quilosParaalqueires(volume));
+			} else {
+				printf("%.2f",	alquieresParaquilos(volume));
+			}
+		break;
+			case '8':
+				system("CLS");
+				menuquiloslibras();
+			   volume = 0;
+			   opvolume = 0;
+			   
+			   printf("Escolha a opção:\n");
+               printf("1. Quilos para libras\n");
+               printf("2. 	Libras para quilos\n");
+               do {
+                	scanf("%d",&opvolume1);
+	                if(opvolume1<1 || opvolume1>2){
+				       	printf("ERRO\n");
+				    }
+				}while(opvolume1<1 || opvolume1>2);
+                
+			   printf("escolha o  volume\n");
+			   scanf("%f", &volume);	
+			       
+			if(opvolume ==1){
+				printf("%.2f", quilosParalibras(volume));
+			} else {
+				printf("%.2f",	librasParaquilos(volume));
+			}
+		break;
+			case '9':
+				system("CLS");
+			menuhectares();
+			
+			volume = 0;
+			opvolume = 0;
+			   
+			   printf("Escolha a opção:\n");
+               printf("1. hectares para metros \n");
+               printf("2. metros para hectares\n");
+            do {
+                	scanf("%d",&opvolume1);
+	                if(opvolume1<1 || opvolume1>2){
+				       	printf("ERRO\n");
+				    }
+				}while(opvolume1<1 || opvolume1>2);
+				
+                
+			   printf("escolha o  volume\n");
+			   scanf("%f", &volume);	
+			       
+			if(opvolume ==1){
+				printf("%.2f", hectaresParaMetrosQuadrados(volume));
+			} else {
+				printf("%.2f", metrosQuadradosParaHectares(volume));
+			}
+		break;
+			case '0':
+				system("CLS");
+					break;
+			
+}
+
+
+
+}
+while(op != 0){
+}
+
+
