@@ -1,0 +1,84 @@
+#include &lt;stdio.h&gt;
+
+#define BLUE &quot;\033[1;34m&quot;
+#define CYAN &quot;\033[1;36m&quot;
+#define GREEN &quot;\033[1;32m&quot;
+#define YELLOW &quot;\033[1;33m&quot;
+#define MAGENTA &quot;\033[1;35m&quot;
+#define RED &quot;\033[1;31m&quot;
+#define RESET &quot;\033[0m&quot;
+
+void print_sector(int num, char op, int size) {
+printf(&quot;\n%s Tabuada de %d\n&quot;, BLUE, num);
+printf(&quot;%s|---------------------------|\n&quot;, CYAN);
+
+for (int i = 1; i &lt;= size; i++) {
+switch (op) {
+case &#39;+&#39;:
+printf(&quot;%s|%3d + %3d = %6d|\n&quot;, GREEN, num, i, num + i);
+break;
+case &#39;-&#39;:
+printf(&quot;%s|%3d - %3d = %6d|\n&quot;, YELLOW, num, i, num - i);
+break;
+case &#39;*&#39;:
+printf(&quot;%s|%3d * %3d = %6d|\n&quot;, MAGENTA, num, i, num * i);
+break;
+case &#39;/&#39;:
+printf(&quot;%s|%3d / %3d = %8.2f|\n&quot;, RED, num, i, (float)num / i);
+break;
+case &#39;%&#39;:
+printf(&quot;%s|%3d %% %3d = %6d|\n&quot;, MAGENTA, num, i, num % i);
+break;
+default:
+
+printf(&quot;%sOpção inválida!\n&quot;, RED);
+break;
+}
+}
+
+printf(&quot;%s|___________________________|\n&quot;, CYAN);
+}
+
+int main() {
+int num;
+char op;
+int choice;
+
+while (1) {
+printf(&quot;%s.---------------------------.\n&quot;, CYAN);
+printf(&quot;| %sBem-vindo à Calculadora%s |\n&quot;, YELLOW, CYAN);
+printf(&quot;|%s 1. Exibir tabuada%s |\n&quot;, MAGENTA, CYAN);
+printf(&quot;|%s 2. Sair%s |\n&quot;, RED, CYAN);
+printf(&quot;&#39;---------------------------&#39;\n&quot;);
+
+printf(&quot;%sDigite o número da opção desejada: &quot;, CYAN);
+if (scanf(&quot;%d&quot;, &amp;choice) != 1) {
+printf(&quot;%sEntrada inválida! Tente novamente.\n&quot;, RED);
+break;
+}
+
+if (choice == 1) {
+printf(&quot;%s.-------------------------------------------.\n&quot;, CYAN);
+printf(&quot;| %sDigite um número para exibir a tabuada:%s |\n&quot;, GREEN, CYAN);
+if (scanf(&quot;%d&quot;, &amp;num) != 1) {
+printf(&quot;%sEntrada inválida! Tente novamente.\n&quot;, RED);
+break;
+
+}
+
+printf(&quot;| %sDigite a operação (+, -, *, /, %%):%s |\n&quot;, GREEN, CYAN);
+printf(&quot;&#39;-------------------------------------------&#39;\n&quot;);
+
+scanf(&quot; %c&quot;, &amp;op);
+print_sector(num, op, 10);
+} else if (choice == 2) {
+printf(&quot;%sSaindo...\n&quot;, RED);
+break;
+} else {
+printf(&quot;%sOpção inválida! Tente novamente.\n&quot;, RED);
+}
+printf(&quot;\n&quot;);
+}
+
+return 0;
+}
