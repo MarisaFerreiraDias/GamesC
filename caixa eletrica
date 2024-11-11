@@ -1,0 +1,136 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <locale.h>
+#include <conio.h>
+#include <time.h>
+#define true 1
+#define false 0
+
+int dinheiro; //variavel global de dinheiro, onde o valor que for depositado vai ser guardado vai ser guardado
+int tirarDinheiro;
+int deposita;
+int nif;
+
+int deposito(){ //funcao para depositar dinheiro 
+	system("CLS");
+	
+	printf("Por favor insira o dinheiro que deseja depositar: \n");
+	scanf("%d", &deposita); //aqui vai ser onde é inserido o valor que se deseja depositar e vai guardar na variavel global de "dinheiro"
+	
+	dinheiro = dinheiro + deposita;
+
+	if(dinheiro == 0){
+		printf("Não é possivel depositar 0 EUR\n");
+	} else{
+		printf("Dinheiro depositado com sucesso\n");	
+	} 
+	
+}
+
+void verificarSaldo(){
+	system("CLS");
+	
+	printf("Tem %d EUR na sua conta bancária\n", dinheiro);
+}
+
+void levantarDinheiro(){
+	system("CLS");
+	
+	printf("quanto dinheiro quer levantar: \n")	;
+	scanf("%d", &tirarDinheiro);
+		if(dinheiro < tirarDinheiro){
+			printf("Não tem dinheiro suficiente na sua conta\n");
+		}else if(tirarDinheiro == 0){
+			printf("Não é possivel tirar 0 EUR\n");
+	}
+		else{
+			dinheiro = dinheiro - tirarDinheiro;
+			printf("Dinheiro levantado com sucesso\n");
+	}	
+}
+
+void numeroNif(){
+	system("CLS");
+	printf("insira o seu NIF: ");
+	scanf("%d", &nif);
+}
+
+void talao(){
+	system("CLS");
+	printf(" _____________________________\n");
+    printf("|                            |\n");
+    printf("|_________RECIBO_____________|\n");
+    printf("|                            |\n");
+    printf("|  Depositou: %d EUR         \n", deposita);
+    printf("|  Levantou: %d EUR          \n", tirarDinheiro);
+    printf("|  Tem %d EUR                \n", dinheiro);
+    printf("|  NIF: %d                   \n", nif);
+    printf("|                            |\n");
+    printf("|////////////////////////////|\n");
+    printf("|                            |\n");
+    printf("|                            |\n");
+    printf("|                            |\n");
+    printf("|                            |\n");
+    printf("|                            |\n");
+    printf("|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/\n");
+}
+
+void imprimirMenu(){		//menu da caixa eletronica
+	system("CLS");
+	printf("\n\t       _____________________________________\n");
+	printf("\t      /____________________________________/|\n");
+	printf("\t     |                                     ||\n");
+	printf("\t     | Escolha a opereção que deseja       ||\n");
+	printf("\t     | 1-Deposito                          ||\n");
+	printf("\t     | 2-Verificar saldo                   ||\n");
+	printf("\t     | 3-Levantar dinheiro                 ||\n");
+	printf("\t     | 0-Sair                              ||\n");
+	printf("\t     |_____________________________________||\n");
+	printf("\t     /                                    / |\n");
+	printf("\t    /             1 2 3                  /  |\n");
+	printf("\t   /             4 5 6                  /   |\n");
+	printf("\t  /             7 8 9                  /    |\n");
+	printf("\t /             %c 0                    /     |\n", 127);
+	printf("\t/____________________________________/      |\n");
+	printf("\t|                                    |      |\n");
+	printf("\t|                                    |     /\n");
+	printf("\t|                                    |    /\n");
+	printf("\t|                                    |   / \n");
+	printf("\t|              A T M                 |  /\n");
+	printf("\t|____________________________________| /\n");
+	printf("");
+}
+
+int main(){
+	setlocale(LC_ALL, "PORTUGUESE");
+	int opcao;
+	int fechar = false;
+	
+	while(fechar == false){
+		imprimirMenu();
+		opcao = getch();
+	switch(opcao){
+		case '1':
+			deposito();
+			system("pause");
+			break;
+		case '2':
+			verificarSaldo();
+			system("pause");
+			break;
+		case '3':
+			levantarDinheiro();
+			system("pause");
+			break;
+		case '0':
+			numeroNif();
+			talao();
+			system("pause");
+			fechar = true;
+			break;
+		default:
+			break;
+		}
+	}	
+}
