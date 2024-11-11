@@ -1,0 +1,273 @@
+//PROJETO MIGUEL/ TIAGO
+//JOGO DO GALO
+
+#include <stdio.h>
+
+
+int main()
+
+{
+
+   
+
+// declarar  variáveis
+
+// declarar as possíveis escolhas nomeadamente a linha e coluna do jogo
+
+
+int escolhas, linha, coluna;
+
+char origem[3][3]={{'_','_','_'},{'_','_','_'},{'_','_','_'}};
+
+char destino[3][3];
+
+char X='X', O='O';
+
+char jog1[15], jog2[15];
+
+
+    printf("\nNome do jogador 1: ");
+
+    scanf("%s",jog1);
+
+    printf("\nNome do jogador 2: ");
+
+    scanf("%s",jog2);
+
+   
+
+    printf("OXOXOXOXO--MENU--XOXOXOXOX\n");
+
+    printf("X                        O\n");
+
+    printf("O                        X\n");
+
+    printf("X                        O\n");
+
+    printf("O  1:jogo do galo        X\n");
+
+    printf("X  2:sair                O\n");
+
+    printf("O                        X\n");
+
+    printf("X                        O\n");
+
+    printf("O                        X\n");
+
+    printf("OXOXOXOXOXOXOXOXOXOXOXOXOX\n");
+
+    printf("Escolha: ");
+
+
+//Variável que recebe a escolha do utilizador
+
+    scanf("%d",&escolhas);
+
+
+//Saída do programa
+
+    if(escolhas == 2){
+
+        printf("A sair... obrigado por utilizar o programa!");
+
+        return 0;
+
+    }else{
+
+    printf("\nVamos jogar ao JOGO DO GALO!\n");
+
+    printf("\n_|_|_");
+
+    printf("\n_|_|_");
+
+    printf("\n_|_|_\n\n");
+
+}
+
+
+//Declaramos a variável jogada e é um contador que controla o número de jogadas possíveis
+
+int verificar=1, jogada=0;
+
+
+//Enquanto as jogadas forem menor que 9 repete
+
+while(jogada < 9){
+
+
+//Falta implementar ciclo de verificação
+
+//Jogadas do primeiro jogador (linha e coluna)
+
+    do{
+
+        printf("Jogador %s insira a linha (1-3): ", jog1);
+
+        scanf("%d", &linha);
+
+        if(linha >= 1 && linha <= 3 ) verificar = 0;
+
+        else verificar = 1;
+
+    }while(verificar == 1);
+
+   
+
+    do{
+
+        printf("jogador %s insira a coluna (1-3): ", jog1);
+
+        scanf("%d", &coluna);
+
+     if(coluna >= 1 || coluna <= 3 ) verificar = 0;
+
+     else verificar = 1;
+
+    }while(verificar == 1);
+
+
+
+
+//Transforma o valor do utilizador no índice do vetor e compara se esta livre para ocupar
+
+
+    if(origem[linha-1][coluna-1] == '_'){
+
+        origem[linha-1][coluna-1]=X;
+
+    }else{
+
+       printf("Espaço ocupado, repita por favor.\n");
+
+    }
+
+
+//Incrementa a jogada em 1 valor
+
+jogada++;
+
+//Jogadas do segundo jogador (linha e coluna)
+
+    do{
+
+        printf("Jogador %s insira a linha (1-3): ", jog2);
+
+        scanf("%d", &linha);
+
+        if(linha >= 1 && linha <= 3 ) verificar = 0;
+
+        else verificar = 1;
+
+    }while(verificar == 1);
+
+   
+
+    do{
+
+        printf("jogador %s insira a coluna (1-3): ", jog2);
+
+        scanf("%d", &coluna);
+
+     if(coluna >= 1 || coluna <= 3 ) verificar = 0;
+
+     else verificar = 1;
+
+    }while(verificar == 1);
+    
+    
+    //Transforma o valor do utilizador no índice do vetor e compara se esta livre para ocupar
+
+    if(origem[linha-1][coluna-1] == '_'){
+
+        origem[linha-1][coluna-1]='O';
+
+    }else{
+
+       printf("Espaço ocupado, repita por favor.\n");
+
+    }
+
+    
+    
+//Implementa uma barra em frente ao X jogado
+
+int i=0, j=0;
+
+    printf("%c", origem[i][j]); j++; printf("|");
+
+    printf("%c", origem[i][j]); j++; printf("|");
+
+    printf("%c", origem[i][j]); j=0; i++; printf("\n");
+
+    printf("%c", origem[i][j]); j++; printf("|");
+
+    printf("%c", origem[i][j]); j++; printf("|");
+
+    printf("%c", origem[i][j]); j=0; i++; printf("\n");
+
+    printf("%c", origem[i][j]); j++; printf("|");
+
+    printf("%c", origem[i][j]); j++; printf("|");
+
+    printf("%c", origem[i][j]); j=0; i++; printf("\n");
+
+
+//As possíveis maneiras do jogador X ganhar
+
+    if(origem[0][0] == X && origem[0][1] == X && origem[0][2] == X){ printf("Jogador %s ganhou!\n", jog1); break;}
+
+    else if(origem[1][0] == X && origem[1][1] == X && origem[1][2] == X){ printf("Jogador %s ganhou!\n", jog1); break;}
+
+    else if(origem[2][0] == X && origem[2][1] == X && origem[2][2] == X){ printf("Jogador %s ganhou!\n", jog1); break;}
+
+   
+
+    else if(origem[0][0] == X && origem[1][0] == X && origem[2][0] == X){ printf("Jogador %s ganhou!\n", jog1); break;}
+
+    else if(origem[0][1] == X && origem[1][1] == X && origem[2][1] == X){ printf("Jogador %s ganhou!\n", jog1); break;}
+
+    else if(origem[0][2] == X && origem[1][2] == X && origem[2][2] == X){ printf("Jogador %s ganhou!\n", jog1); break;}
+
+   
+
+    else if(origem[0][0] == X && origem[1][1] == X && origem[2][2] == X){ printf("Jogador %s ganhou!\n", jog1); break;}
+
+    else if(origem[0][2] == X && origem[1][1] == X && origem[2][0] == X){ printf("Jogador %s ganhou!\n", jog1); break;}
+    if(origem[0][0] == O && origem[0][1] == O && origem[0][2] == O){ printf("Jogador %s  ganhou!\n", jog2); break;}
+
+    else if(origem[1][0] == O && origem[1][1] == O && origem[1][2] == O){ printf("Jogador %s ganhou!\n", jog2); break;}
+
+    else if(origem[2][0] == O && origem[2][1] == O && origem[2][2] == O){ printf("Jogador %s ganhou!\n", jog2); break;}
+
+   
+
+    else if(origem[0][0] == O && origem[1][0] == O && origem[2][0] == O){ printf("Jogador %s ganhou!\n", jog2); break;}
+
+    else if(origem[0][1] == O && origem[1][1] == O && origem[2][1] == O){ printf("Jogador %s ganhou!\n", jog2); break;}
+
+    else if(origem[0][2] == O && origem[1][2] == O && origem[2][2] == O){ printf("Jogador %s ganhou!\n", jog2); break;}
+
+
+    else if(origem[0][0] == O && origem[1][1] == O && origem[2][2] == O){ printf("Jogador %s ganhou!\n", jog2); break;}
+
+    else if(origem[0][2] == O && origem[1][1] == O && origem[2][0] == O){ printf("Jogador %s ganhou!\n", jog2); break;}
+
+}
+
+
+    /*Testar a impressão do jogo
+
+    for(int i=0; i<3; i++){
+
+        for(int j=0; j<3; j++)
+
+        printf("%c", origem[i][j]);
+
+    }*/
+
+    printf("\nJogo terminado, adeus!\n");
+
+        return 0;
+
+}
+
